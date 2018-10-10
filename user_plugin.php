@@ -17,14 +17,16 @@ class user{
    function show_staff(){
    		$big = 999999999;
    		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+   		$number = 2;
    		$args = array( 
    			'role' => 'staff',
-   			'number' => 5,
+   			'number' => 2,
    			'paged' => $paged
    		);
 
 		$user_query = new WP_User_Query( $args );
-
+		$total_users = count_users();
+		$total_users = $total_users['total_users'];
 
 		if ( ! empty( $user_query->get_results() ) ) {
 			echo "<table id='users'>";
@@ -44,7 +46,7 @@ class user{
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '/page/%#%',
 			'current' => max( 1, get_query_var('paged') ),
-			'total' => 5
+			'total' => floor($total_users / $number)
 		) );
     }
 }
