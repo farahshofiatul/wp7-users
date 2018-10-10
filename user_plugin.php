@@ -43,8 +43,6 @@ class user{
 			echo 'No users found.';
 		}
 		echo paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '/page/%#%',
 			'current' => max( 1, get_query_var('paged') ),
 			'total' => floor($total_users / $number)
 		) );
