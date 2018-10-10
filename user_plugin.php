@@ -20,7 +20,7 @@ class user{
    		$number = 2;
    		$args = array( 
    			'role' => 'staff',
-   			'number' => 2,
+   			'number' => $number,
    			'paged' => $paged
    		);
 
