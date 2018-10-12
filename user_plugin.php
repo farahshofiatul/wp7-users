@@ -13,19 +13,6 @@ class user{
 	}
 
 	function add_roles_on_plugin_activation1() {
-		/*
-		WP_Roles => array(
-  			'roles' => array(
-    			'administrator' => array(
-      				'name' => 'administrator',
-      				'capabilities' => array(
-        				'switch_themes' => true,
-        				'edit_themes' =>  true,
-        				'activate_plugins' => true,
-      				)
-      			)
-      		)
- 		// )*/
        add_role( 'Staff', 'Staff', array( 
        	'read' => true, 
        	'edit_posts' => true 
@@ -40,7 +27,8 @@ class user{
        	'delete_users' => true, 
        	'edit_users' => true, 
        	'promote_users' => true,
-       	'manage_options' => true 
+       	'manage_options' => true,
+       	'customize' => true
        ) );
     }
 
