@@ -13,11 +13,11 @@ class user{
 	}
 
 	function add_roles_on_plugin_activation1() {
-       add_role( 'Staff', 'Staff', array( 
+       add_role( 'staff', 'Staff', array( 
        	'read' => true, 
        	'edit_posts' => true 
        ) );
-       add_role( 'Manager', 'Manager', array( 
+       add_role( 'manager', 'Manager', array( 
        	'read' => true, 
        	'edit_posts' => true, 
        	'add_users' => true, 
@@ -66,7 +66,7 @@ class user{
     }
 
     function show_users_role($atts){
-    	$value = shortcode_atts( array('role' => $atts['role']), $atts );
+    	$value = shortcode_atts( array('role' => ''), $atts );
    		$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
    		$number = 2;
    		$args = array( 
